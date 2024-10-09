@@ -1,4 +1,5 @@
 # eBay Order Automation
+![ebay](https://github.com/myamin0516/EbayOrderBot/blob/main/images/ebay.png?raw=true)
 This project is intended for the resale of one-time-use codes in online games particularly on eBay. Whether it be to unlock items, characters, pets, etc. managing a bunch of codes for resale can be a pain. Especially with high sales volume, manually sending all the codes is inefficient. This code aims to streamlines the process of handling orders so that all you'll have to worry about is a spreadsheet.
 
 ## How it Works
@@ -35,8 +36,8 @@ Before starting with the setup, you'll need the following accounts and API crede
    - Setup notifications and subscribe to Fixed Price Transaction Notifications. You will use the API Gateway URL from AWS Lambda. This allows eBay to notify your webhook whenever an item is sold at a fixed price.
 
     **API Endpoints**
-   - AddMemberMessageAAQToPartner for sending messages to buyers.
-   - CompleteSale for marking items as shipped.
+   - [AddMemberMessageAAQToPartner](https://developer.ebay.com/devzone/xml/docs/reference/ebay/AddMemberMessageAAQToPartner.html) for sending messages to buyers.
+   - [CompleteSale](https://developer.ebay.com/devzone/xml/docs/reference/ebay/CompleteSale.html) for marking items as shipped.
 
 2. **Google Cloud Service Configuration**
    - **Create a Google Cloud Project**
@@ -45,7 +46,8 @@ Before starting with the setup, you'll need the following accounts and API crede
    - Go to IAM & Admin > Service Accounts, create a new account, and grant the necessary roles (e.g., Editor and Sheets API roles).
    - Download the service account’s JSON key file. This will be used to authenticate the application with Google Sheets.
    - **Share the Google Sheet**
-   - Create a new Google Sheet with two columns. The first column (A) will hold the codes, and the second column (B) will be marked as "used" once a code is issued.
+   - Create a new Google Sheet with two columns. The first column (A) will hold the codes, and the second column (B) will be marked as "used" once a code is issued. You can use multiple sheets for different games and multiple "couples" of columns.
+   ![sheets](https://github.com/myamin0516/EbayOrderBot/blob/main/images/sheets.png?raw=true)
    - Share the Google Sheet with edit permissions to your service account email address, which can be found in the downloaded JSON key file.
 3. **AWS Lambda Configuration**
    - **Create an AWS Lambda Function**
