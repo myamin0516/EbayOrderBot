@@ -18,8 +18,8 @@ The application processes incoming order notifications, checks for payment statu
 
 ## Table of Contents
 - [Requirements](#requirements)
-- [Configuration](#configuration)
-- [Setup](#setup)
+- [Configuration](#configuration ⚙️)
+- [Setup](#setup 🦾)
 - [Disclaimer](#disclaimer)
 
 ## Requirements 📝
