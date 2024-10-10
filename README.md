@@ -17,19 +17,19 @@ The application processes incoming order notifications, checks for payment statu
 - **eBay API**: For processing orders and sending messages to buyers
 
 ## Table of Contents
-- [Requirements](#requirements)
-- [Configuration](#configuration)
-- [Setup](#setup)
+- [Requirements](#requirements-)
+- [Configuration](#configuration-%EF%B8%8F)
+- [Setup](#setup-)
 - [Disclaimer](#disclaimer)
 
-## Requirements   📝
+## Requirements 📝
 Before starting with the setup, you'll need the following accounts and API credentials:
 - **eBay Developer Account** Obviously, you'll need to create an eBay developer account (linked with your seller account) and obtain production API keys. Additionally, you must subscribe to fixed price transaction notifications, which will trigger AWS Lambda or your alternative backend service whenever an order is placed.
 - **Google Service Account** The project relies on Google Sheets to store and retrieve codes. You need to create a Google Service Account and get your JSON key file.
 - **AWS Account (or alternative cloud service)** Create an AWS account, configure AWS Lambda for handling webhook events (API gateway) and DynamoDB to store the processed order IDs.
 - **Google Sheets Setup** You will also need to set up a Google Sheet containing the codes you plan to sell. The sheet must follow a specific structure to allow the application to correctly mark used codes and retrieve available ones.
 
-## Configuration   ⚙️
+## Configuration ⚙️
 1. **eBay Developer Configuration**
    - Obtain your App ID, Dev ID, and Cert ID.
    - Generate an eBay OAuth Token to make authenticated API requests.
@@ -68,7 +68,7 @@ Before starting with the setup, you'll need the following accounts and API crede
    - Configure a POST endpoint and link it to your Lambda function. This will serve as the webhook that eBay calls when an order is placed.
    - Deploy the API and note the URL endpoint, which you’ll use to configure the webhook in eBay.
 
-## Setup   🦾
+## Setup 🦾
 1. Clone the repository:
    ```bash
    git clone https://github.com/myamin0516/ebay-order-automation.git```
